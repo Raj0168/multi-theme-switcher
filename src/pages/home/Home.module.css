@@ -40,3 +40,10 @@
     gap: 0.5rem;
   }
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}

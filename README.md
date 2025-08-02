@@ -32,6 +32,7 @@ A modern theme-switchable React + TS app built using Vite, Redux Toolkit, RTK Qu
 
 ```bash
 git clone https://github.com/Raj0168/multi-theme-switcher.git
+cd multi-theme-switcher
 ```
 
 ### 2. Install dependencies

@@ -2,16 +2,9 @@ import Card from "../../components/card/Card";
 import Spinner from "../../components/utils/Spinner";
 import { useGetProductsQuery } from "../../redux/api/productsApi";
 import styles from "./Home.module.css";
-import listStyles from "./HomeList.module.css";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-}
+import ProductListItem from "../../components/productList/ProductListItem";
 
 export default function Home() {
   const { currentTheme } = useSelector((s: RootState) => s.theme);
@@ -21,16 +14,6 @@ export default function Home() {
   if (isLoading) return <Spinner />;
   if (isError || !products)
     return <div className="container">Error loading products</div>;
-
-  const listItem = (p: Product) => (
-    <div key={p.id} className={listStyles.item}>
-      <img src={p.image} alt={p.title} className={listStyles.thumb} />
-      <div className={listStyles.details}>
-        <h2>{p.title}</h2>
-        <p>${p.price.toFixed(2)}</p>
-      </div>
-    </div>
-  );
 
   return (
     <section className="container">
@@ -49,8 +32,16 @@ export default function Home() {
           ))}
         </div>
       ) : (
-        <div className={listStyles.list}>
-          {products.map((p) => listItem(p))}
+        <div className={styles.list}>
+          {products.map((p) => (
+            <ProductListItem
+              key={p.id}
+              id={p.id}
+              title={p.title}
+              price={p.price}
+              image={p.image}
+            />
+          ))}
         </div>
       )}
     </section>
