@@ -1,0 +1,98 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 60px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: var(--header-shadow);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
+
+.activeLink {
+  border-color: #007bff;
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.dropdown {
+  padding: 0.25rem 0.5rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.fontControls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.fontButton {
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fontButton:hover {
+  background: #eee;
+}
+
+.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+@media (max-width: 600px) {
+  .nav,
+  .controls,
+  .logo {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}

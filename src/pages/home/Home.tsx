@@ -1,0 +1,29 @@
+import Card from "../../components/card/Card";
+import Spinner from "../../components/utils/Spinner";
+import { useGetProductsQuery } from "../../redux/api/productsApi";
+import styles from "./Home.module.css";
+
+export default function Home() {
+  const { data: products, isLoading, isError } = useGetProductsQuery();
+
+  if (isLoading) return <Spinner />;
+  if (isError || !products)
+    return <div className="container">Error loading products</div>;
+
+  return (
+    <section className="container">
+      <h1 className={styles.title}>Featured Products</h1>
+      <div className={styles.grid}>
+        {products.map((p) => (
+          <Card
+            key={p.id}
+            title={p.title}
+            price={p.price}
+            image={p.image}
+            onClick={() => alert(`Buying ${p.title}`)}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}

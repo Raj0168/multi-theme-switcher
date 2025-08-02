@@ -1,0 +1,33 @@
+:root {
+  --bg: #f9f9f9;
+  --fg: #222;
+  --font: "Helvetica", sans-serif;
+  --fs-small: 14px;
+  --fs-medium: 16px;
+  --fs-large: 18px;
+  --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="theme2"] {
+  --bg: #121212;
+  --fg: #eaeaea;
+  --font: Georgia, serif;
+  --header-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="theme3"] {
+  --bg: #fff8f0;
+  --fg: #4b0082;
+  --font: "Pacifico", cursive;
+  --header-shadow: 0 2px 8px rgba(255, 0, 200, 0.15);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: var(--fs-medium);
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s, font 0.3s;
+}

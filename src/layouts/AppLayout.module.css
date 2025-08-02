@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 4rem;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
+}
+
+.content {
+  flex: 1;
+}
