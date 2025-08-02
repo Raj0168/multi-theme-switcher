@@ -96,3 +96,12 @@
     margin-top: 0.5rem;
   }
 }
+
+.menuBtn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--fg);
+  margin-left: 1rem;
+}
