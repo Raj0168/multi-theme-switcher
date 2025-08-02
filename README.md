@@ -17,7 +17,7 @@ A modern theme-switchable React + TS app built using Vite, Redux Toolkit, RTK Qu
 
 ## Features
 
-- Theme switching: Choose from Minimal, Dark, and Playful themes
+- Theme switching: Choose from Minimal, Dark, and Colorful themes
 - Font scaling: Toggle between small, medium, and large font sizes
 - Responsive design: Compatible for all the screens
 - Component-based: Clean, reusable, and maintainable components
@@ -86,7 +86,7 @@ Themes are applied globally by setting a `data-theme` attribute on the select op
 
 - `theme1`: Minimal
 - `theme2`: Dark (includes sidebar)
-- `theme3`: Playful (with product cards)
+- `theme3`: Colorful (with product cards)
 
 Handled via Redux state and synced in `AppLayout.tsx`.
 

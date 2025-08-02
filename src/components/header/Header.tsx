@@ -53,7 +53,7 @@ export default function Header() {
           >
             <option value="theme1">Minimal</option>
             <option value="theme2">Dark</option>
-            <option value="theme3">Playful</option>
+            <option value="theme3">Colorful</option>
           </select>
 
           <div className={styles.fontControls}>

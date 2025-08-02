@@ -21,11 +21,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <NavLink to="/" onClick={onClose}>
             Home
           </NavLink>
-          <NavLink to="/about" onClick={onClose}>
-            About
-          </NavLink>
           <NavLink to="/contact" onClick={onClose}>
             Contact
+          </NavLink>
+          <NavLink to="/about" onClick={onClose}>
+            About
           </NavLink>
         </nav>
       </aside>
