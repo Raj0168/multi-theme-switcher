@@ -64,7 +64,6 @@ src/
 │
 ├── layouts/            # layout outlet for the application
 │   ├── AppLayout.tsx
-
 ├── pages/               # Route pages (Home, About, Contact)
 ├── redux/               # Redux Toolkit setup
 │   ├── store.ts
@@ -74,6 +73,7 @@ src/
 ├── App.tsx              # Main application wrapper
 ├── main.tsx             # Vite entry point
 └── index.html
+└── types.ts             # Common types and interfaces for application
 ```
 
 ---

@@ -10,9 +10,12 @@ import styles from "./Header.module.css";
 const paths: string[] = ["/", "/contact", "/about"];
 
 export default function Header() {
+  // uses the dispatch method to send the changes from the header theme change dropdown to redux store
   const dispatch = useDispatch();
+  // gets the current theme from the redux store
   const { currentTheme, fontScale } = useSelector((s: RootState) => s.theme);
-  const isDarkSidebar = currentTheme === "theme2";
+  // checks if selected theme is 'theme2'/dark mode ; displays the sidebar toggle in header in that case
+  const isDark = currentTheme === "theme2";
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -22,7 +25,7 @@ export default function Header() {
           Theme App
         </NavLink>
 
-        {!isDarkSidebar ? (
+        {!isDark ? (
           <nav className={styles.nav}>
             {paths.map((path, i) => {
               const label =
@@ -45,6 +48,7 @@ export default function Header() {
           </nav>
         ) : null}
 
+        {/* the main dropdown to switch the themes */}
         <div className={styles.controls}>
           <select
             className={styles.dropdown}
@@ -69,7 +73,7 @@ export default function Header() {
               </button>
             ))}
           </div>
-          {isDarkSidebar && (
+          {isDark && (
             <button
               className={styles.menuBtn}
               onClick={() => setSidebarOpen(true)}
@@ -81,7 +85,7 @@ export default function Header() {
         </div>
       </header>
 
-      {isDarkSidebar && (
+      {isDark && (
         <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       )}
     </>

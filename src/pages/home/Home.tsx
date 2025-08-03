@@ -8,8 +8,13 @@ import ProductListItem from "../../components/minimalCard/ProductListItem";
 import DarkCard from "../../components/darkCard/DarkCard";
 
 export default function Home() {
+  // gets current theme from redux store - theme
   const { currentTheme } = useSelector((s: RootState) => s.theme);
+  // uses the rtk query hook to fetch dummy data, 
+  // and we get additional features like isloading and error beause of it
   const { data: products, isLoading, isError } = useGetProductsQuery();
+  // to easily conditionally render the kind of card based on the selected theme
+  // because the designs are so vastly different, using different component was better approach
   const isColorful = currentTheme === "theme3";
   const isDark = currentTheme === "theme2";
 
@@ -26,6 +31,7 @@ export default function Home() {
           {products.map((p) => (
             <Card
               key={p.id}
+              id={p.id}
               title={p.title}
               price={p.price}
               image={p.image}
@@ -38,6 +44,7 @@ export default function Home() {
           {products.map((p) => (
             <DarkCard
               key={p.id}
+              id={p.id}
               title={p.title}
               price={p.price}
               image={p.image}

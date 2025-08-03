@@ -11,13 +11,16 @@ const initialState: ThemeState = {
   fontScale: "medium",
 };
 
+// creates a slice of the redux state with reducers
 const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
+    // reducer function to change the theme
     setTheme(state, action: PayloadAction<ThemeName>) {
       state.currentTheme = action.payload;
     },
+    // reducer function to change the font size
     setFontScale(state, action: PayloadAction<FontScale>) {
       state.fontScale = action.payload;
     },

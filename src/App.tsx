@@ -9,8 +9,11 @@ const Contact = lazy(() => import("./pages/contact/Contact"));
 
 export default function App() {
   return (
+    // handles browser history
     <BrowserRouter>
+      {/* main layout for the application */}
       <AppLayout>
+        {/* lazy loading implemented, renders Spinner animation as fallback */}
         <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
